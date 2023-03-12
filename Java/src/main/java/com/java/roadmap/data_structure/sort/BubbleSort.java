@@ -1,6 +1,4 @@
-package com.java.roadmap.data_structure;
-
-import java.util.Arrays;
+package com.java.roadmap.data_structure.sort;
 
 public class BubbleSort {
 
@@ -37,20 +35,44 @@ public class BubbleSort {
         }
     }
 
+    void bubbleSort3(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = arr.length - 1; j > i; j--) {
+                if (arr[j] > arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+    }
+
+    void bubbleSort4(int arr[]) {
+        int n = arr.length;
+        boolean isSwap = false;
+        for (int i = 0; i < n; i++) {
+            isSwap = false;
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    isSwap = true;
+                }
+            }
+            if(!isSwap){
+                break;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         BubbleSort bubbleSort = new BubbleSort();
-        int[] arrOrigin = {12, 25, 21, 1, 5, 5, 235, 32, 12, 53, 66, 32, 22};
-        System.out.print(" BubbleSort 2  ");
-        bubbleSort.bubbleSort2(arrOrigin);
-        for (int i : arrOrigin) {
-            System.out.print(i + "   ");
-        }
-        System.gc();
-        System.out.print(" BubbleSort 1  ");
-        int[] arrOriginTest = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
-        bubbleSort.bubbleSort1(arrOriginTest);
-        for (int i : arrOrigin) {
-            System.out.print(i + "   ");
+        int[] arrOrigin = {12, 25, 21, 1, 5, 5, 235, 32, 12, 53, 66, 32, 22, 333, 2355325};
+        bubbleSort.bubbleSort4(arrOrigin);
+        for (int element : arrOrigin) {
+            System.out.print(element);
+            System.out.print("   ");
         }
     }
 }
