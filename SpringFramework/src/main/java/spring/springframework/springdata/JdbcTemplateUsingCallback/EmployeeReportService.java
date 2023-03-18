@@ -29,7 +29,7 @@ public class EmployeeReportService {
         System.out.println(employeeDao.findAverageSalarySqlLevel());
 
         System.out.println("Employee found based on email");
-        System.out.println(employeeDao.findEmployeeIdFromEmail("vinhnt@gmail.com"));
+        System.out.println(employeeDao.findEmployeeIdFromEmail("John.Doe@corp.com"));
     }
 
 }
